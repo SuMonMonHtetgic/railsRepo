@@ -1,0 +1,22 @@
+<h1>Sample testing file</h1>
+<p>
+Model:
+The model represents the data and business logic of the application. It deals with data storage, retrieval, and manipulation. In Rails, models are typically represented by Ruby classes that inherit from ActiveRecord, the ORM (Object-Relational Mapping) library in Rails. The models define the structure of the database tables and provide methods to query and modify data. 
+</p>
+<p>
+View:
+The view handles the presentation layer of the application. It generates the user interface and displays data to the user. In Rails, views are usually written using HTML with embedded Ruby (ERB) syntax. ERB allows you to embed Ruby code within HTML templates, enabling dynamic content generation. Views can access data from the models through the controller and present it to the user.
+</p>
+<p>
+Controller:
+The controller acts as an intermediary between the model and the view. It receives requests from the user's browser, processes them, interacts with the model to retrieve or modify data, and then determines which view to render as a response. In Rails, controllers are Ruby classes that inherit from ActionController. They define action methods that correspond to different routes in the application. Actions handle incoming requests, perform necessary operations, and render appropriate views.
+</p>
+The flow of a typical request in Ruby on Rails follows this sequence:
+<p>
+A user makes a request to the Rails application through a URL.
+The request is routed to the corresponding controller based on the URL.
+The controller executes the requested action method.
+The action method interacts with the model to fetch or manipulate data.
+Once the necessary operations are completed, the controller selects an appropriate view.
+The view is rendered, and the HTML response is sent back to the user's browser.
+</p>
