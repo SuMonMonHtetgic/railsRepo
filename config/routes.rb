@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/testing'
   get 'home/sample'
-  get 'friends#new'
+  get 'friends/new'
 
   root "home#index"
 end
