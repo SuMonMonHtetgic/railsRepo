@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-success font-monospace">
+<nav class="navbar navbar-expand-lg bg-primary font-monospace">
   <div class="container-fluid">
     <%= link_to 'Friend App', root_path, class:"navbar-brand text-light" %>
   
@@ -13,25 +13,39 @@
         <li class="nav-item">
           <%= link_to 'Friends', friends_url, class:"nav-link text-light" %>
         </li>
-         <li class="nav-item">
-          <%= link_to 'New Friend', friends_new_url, class:"nav-link text-light" %>
-        </li>
         <li class="nav-item">
           <%= link_to 'About us', home_about_url, class:"nav-link text-light" %>
           <%# <a class="nav-link" href="#">Link</a> %>
         </li>
-        <li class="nav-item">
-            <%= link_to 'Testing', home_testing_url, class:"nav-link text-light" %>
-        </li>
-        <li class="nav-item">
-            <%= link_to 'Sample', home_sample_url, class:"nav-link text-light" %>
-        </li>
+
+        <% if user_signed_in? %>
+          
+            <li class="nav-item">
+                <%= link_to 'Add Friend', friends_new_url, class:"nav-link text-light" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link text-light" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: { "turbo-method": :delete }, class: "nav-link text-light" %>
+            </li>
+
+          <span class="nav-link text-light">
+                <%= current_user.email %>
+          </span>
+
+        <% else %>
+            <li class="nav-item">
+                <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link text-light" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Sign In', new_user_session_path, class:"nav-link text-light" %>
+            </li>
+        <% end %>
+       
       
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    
     </div>
   </div>
 </nav>

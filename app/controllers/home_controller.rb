@@ -4,7 +4,9 @@ class HomeController < ApplicationController
   end
 
   def about
-    
+    @about_me = "testing controller about"
+    @answer = 2 + 2
   end
+  
 
 end
